@@ -9,17 +9,4 @@ node('built-in')
     {
       cicd.newmaven()
     }
-    stage('continous Deployment_master')
-    {
-        cicd.newDeploy("Scriptedwithsharedlibrary","172.31.30.227","testapp")
-    }
-    stage('continous Testing_master')
-    {
-     cicd.newGit("https://github.com/intelliqittrainings/FunctionalTesting.git")
-     cicd.runselenium("Scriptedwithsharedlibrary")
-    }
-    stage('continous Delivery_master')
-    {
-      cicd.newDeploy("Scriptedwithsharedlibrary","172.31.31.86","prodapp") 
-    }
-}
+    
